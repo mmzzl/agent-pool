@@ -26,7 +26,6 @@ class ProxyMetaclass(type):
         attrs["__CrawlFuncCount__"] = count
         return type.__new__(cls, name, bases, attrs)
 ```
-继承 type,第四个参数是属性attrs,可以添加对类属性，type.__new__(cls,name,bases,attrs)
 使用定义的元类，添加metaclass
 ```
 class Crawler(object, metaclass=ProxyMetaclass):
